@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+    	http://www.springframework.org/schema/context
+    	http://www.springframework.org/schema/context/spring-context.xsd
+    	http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+	<context:component-scan
+		base-package="com.aurostest.aurostest.controllers" />
+
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/views/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+	<bean
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource" name="dataSource">
+		<property name="driverClassName"
+			value="com.mysql.jdbc.Driver" />
+		<property name="url"
+			value="jdbc:mysql://localhost:3306/auros_test_db?serverTimezone=GMT%2b8" />
+		<property name="username" value="root" />
+		<property name="password" value="root" />
+	</bean>
+
+	<bean class="org.springframework.jdbc.core.JdbcTemplate"
+		name="jdbcTemplateObj">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+	</bean>
+
+	<!-- <bean id="jdbcTemplate" class="com.aurostest.aurostest.dao.impl.KPacDaoImpl"> 
+		<property name="dataSource" ref="dataSource" /> </bean> -->
+
+	<bean class="com.aurostest.aurostest.dao.impl.KPacDaoImpl"
+		name="kpacDao">
+		<property name="jdbcTemplate">
+			<ref bean="jdbcTemplateObj" />
+		</property>
+	</bean>
+	
+	<bean class="com.aurostest.aurostest.dao.impl.KPacSetDaoImpl"
+		name="kpacSetDao">
+		<property name="jdbcTemplate">
+			<ref bean="jdbcTemplateObj" />
+		</property>
+	</bean>
+	
+	<bean class="com.aurostest.aurostest.dao.impl.KPacSetAndKPacDaoImpl"
+		name="kpacSetAndKpacDao">
+		<property name="jdbcTemplate">
+			<ref bean="jdbcTemplateObj" />
+		</property>
+	</bean>
+	
+
+</beans>

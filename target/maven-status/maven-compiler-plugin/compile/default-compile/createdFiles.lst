@@ -1,0 +1,14 @@
+com\aurostest\aurostest\util\KPacSetAndKPacMapper.class
+com\aurostest\aurostest\controllers\KPacSetController.class
+com\aurostest\aurostest\dao\impl\KPacSetAndKPacDaoImpl.class
+com\aurostest\aurostest\dao\impl\KPacDaoImpl.class
+com\aurostest\aurostest\controllers\KPacController.class
+com\aurostest\aurostest\model\KPacSetModel.class
+com\aurostest\aurostest\model\KPacSetAndKPacModel.class
+com\aurostest\aurostest\model\KPacModel.class
+com\aurostest\aurostest\util\KPacMapper.class
+com\aurostest\aurostest\util\KPacSetMapper.class
+com\aurostest\aurostest\dao\KPacSetAndKPacDao.class
+com\aurostest\aurostest\dao\KPacDao.class
+com\aurostest\aurostest\dao\impl\KPacSetDaoImpl.class
+com\aurostest\aurostest\dao\KPacSetDao.class
