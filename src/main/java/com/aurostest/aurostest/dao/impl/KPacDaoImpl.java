@@ -18,10 +18,10 @@ public class KPacDaoImpl implements KPacDao {
 	private DataSource dataSource;
 	private JdbcTemplate jdbcTemplate;
 
-	private static final String SELECT_KPAC_BY_ID = "SELECT * FROM auros_test_db.k_pac WHERE id = ?;";
-	private static final String INSERT_KPAC = "INSERT INTO auros_test_db.k_pac (Title, Description_k_pac, Creation_date) VALUES (?, ?, ?); ";
-	private static final String REMOVE_KPAC = "DELETE FROM auros_test_db.k_pac WHERE id = ?; ";
-	private static final String SELECT_ALL_KPAC = "SELECT * FROM auros_test_db.k_pac;";
+	private static final String SELECT_KPAC_BY_ID = "SELECT * FROM k_pac WHERE id = ?;";
+	private static final String INSERT_KPAC = "INSERT INTO k_pac (Title, Description_k_pac, Creation_date) VALUES (?, ?, ?); ";
+	private static final String REMOVE_KPAC = "DELETE FROM k_pac WHERE id = ?; ";
+	private static final String SELECT_ALL_KPAC = "SELECT * FROM k_pac;";
 
 	public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
 		this.jdbcTemplate = jdbcTemplate;

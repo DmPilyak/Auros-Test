@@ -22,6 +22,7 @@
 		<property name="suffix" value=".jsp" />
 	</bean>
 
+<!--  
 	<bean
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource" name="dataSource">
 		<property name="driverClassName"
@@ -30,6 +31,16 @@
 			value="jdbc:mysql://localhost:3306/auros_test_db?serverTimezone=GMT%2b8" />
 		<property name="username" value="root" />
 		<property name="password" value="root" />
+	</bean>
+	 -->
+	 <bean
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource" name="dataSource">
+		<property name="driverClassName"
+			value="org.postgresql.Driver" />
+		<property name="url"
+			value="jdbc:postgresql://ec2-54-247-103-43.eu-west-1.compute.amazonaws.com/dfjopffsjvps7t?sslmode=require" />
+		<property name="username" value="nbbcinagiapeyc" />
+		<property name="password" value="8f957e5a943dfd51537a0b9447320eb671f86c34ad409c5b78bf0cc0145fe09a" />
 	</bean>
 
 	<bean class="org.springframework.jdbc.core.JdbcTemplate"
